@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class HealthStatusChecker {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //รับ FBS และBP
+        System.out.print("Enter FBS: ");
+        double fbs = scanner.nextDouble();
+
+        System.out.print("Enter BP: ");
+        double bp = scanner.nextDouble();
+
+        //คำนวณสถานะ
+        String status = "";
+        String color = "";
+
+        if (bp <= 120 && fbs < 100) {
+            status = "Normal";
+            color = "White";
+        } else if (bp >= 121 && bp <= 139 && fbs < 101) {
+            status = "At Risk";
+            color = "Green";
+        } else if (bp >= 140 && bp <= 159 && fbs >= 125 && fbs <= 154) {
+            status = "Level 1";
+            color = "Yellow";
+        } else if (bp >= 160 && bp <= 179 && fbs >= 155 && fbs <= 182) {
+            status = "Level 2";
+            color = "Orange";
+        } else if (bp >= 180 && fbs >= 183) {
+            status = "Level 3";
+            color = "Red";
+        } else {
+            status = "Undefined";
+            color = "White";
+        }
+    }
+}
