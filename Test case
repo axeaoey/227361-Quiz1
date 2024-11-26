@@ -1,0 +1,35 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class HealthStatusCheckerTest {
+
+    @Test
+    void testNormal() {
+        assertEquals("Normal:White", HealthStatusChecker.calculateHealthStatus(90, 110));
+    }
+
+    @Test
+    void testAtRisk() {
+        assertEquals("At Risk:Green", HealthStatusChecker.calculateHealthStatus(100, 130));
+    }
+
+    @Test
+    void testLevel1() {
+        assertEquals("Level 1:Yellow", HealthStatusChecker.calculateHealthStatus(130, 150));
+    }
+
+    @Test
+    void testLevel2() {
+        assertEquals("Level 2:Orange", HealthStatusChecker.calculateHealthStatus(170, 160));
+    }
+
+    @Test
+    void testLevel3() {
+        assertEquals("Level 3:Red", HealthStatusChecker.calculateHealthStatus(190, 190));
+    }
+
+    @Test
+    void testUndefined() {
+        assertEquals("Undefined:White", HealthStatusChecker.calculateHealthStatus(105, 115));
+    }
+}
