@@ -5,7 +5,7 @@ public class HealthStatusChecker {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        //รับ FBS และBP
+        //รับ FBS และBP จากผู้ใช้
         System.out.print("Enter FBS: ");
         double fbs = scanner.nextDouble();
 
@@ -35,5 +35,12 @@ public class HealthStatusChecker {
             status = "Undefined";
             color = "White";
         }
+
+        //ประมวลลลล
+        System.out.println("\n--- Result ---");
+        System.out.println("Status: " + status);
+        System.out.println("Color: " + color);
+        
+        scanner.close();
     }
 }
